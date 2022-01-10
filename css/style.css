@@ -212,7 +212,7 @@ header .header_content {
     height: auto;
     padding: 132px 10px;
     background-image: url("../img/Banner-small.png");
-    background-position: center right;
+    background-position: center;
     background-size: cover;
   }
 }
