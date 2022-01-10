@@ -107,12 +107,6 @@ header .header_content {
   flex-direction: column;
 }
 .icon_counter .icon_img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 10px;
 }
 .icon_counter .icon_item .icon_text {
@@ -122,6 +116,8 @@ header .header_content {
 .icon_counter .icon_item .icon_text h6 {
   color: var(--main-color);
   font-weight: bold;
+  font-size: 16px;
+  line-height: 1.7;
 }
 .icon_counter .icon_item .icon_text span {
   color: var(--second-color);
@@ -162,11 +158,22 @@ header .header_content {
     padding: 200px;
   }
 }
+@media (max-width: 1026px) and (min-width: 767px) {
+  .icon_counter .icon_item {
+    padding: 4px;
+  }
+  .icon_counter .icon_item .icon_text h6 {
+    font-size: 12px;
+  }
+  .icon_counter .icon_item .icon_text span {
+    font-size: 14px !important;
+  }
+}
 
 @media (max-width: 991px) {
   .header_content img {
     max-width: 200px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
   }
   .header a {
     font-size: 13px;
@@ -202,7 +209,7 @@ header .header_content {
     line-height: 1.7;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   header .header_content {
     height: auto;
     flex-direction: column;
@@ -214,5 +221,22 @@ header .header_content {
     background-image: url("../img/Banner2.png");
     background-position: center;
     background-size: cover;
+  }
+}
+@media (max-width: 567px) {
+  .icon_counter .icon_item .icon_text {
+    padding: 0 50px;
+  }
+  .icon_counter .icon_item .icon_text h6 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 367px) {
+  .home {
+    background-position: center right -48px;
+  }
+  .header a {
+    font-size: 11px;
   }
 }
