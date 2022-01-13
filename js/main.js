@@ -1,26 +1,39 @@
-const counters = document.querySelectorAll(".num");
-const speed = 111;
-
 let section = document.querySelector(".icon_counter");
 let started = false; // Function Started ? No
 window.onscroll = function () {
-  if (window.scrollY >= section.offsetTop - 100) {
+  if (window.scrollY >= section.offsetTop - 250) {
     if (!started) {
-      counters.forEach((counter) => {
-        const updateCount = () => {
-          const target = parseInt(+counter.getAttribute("data-goal"));
-          const count = parseInt(+counter.innerText);
-          const increment = Math.trunc(target / speed);
-          console.log(increment);
-          if (count < target) {
-            counter.innerText = count + increment;
-            setTimeout(updateCount, 1);
-          } else {
-            count.innerText = target;
+      $(".num").each(function () {
+        var $this = $(this),
+          countTo = $this.attr("data-goal");
+
+        $({
+          countNum: $this.text(),
+        }).animate(
+          {
+            countNum: countTo,
+          },
+
+          {
+            duration: 2000,
+            easing: "linear",
+            step: function () {
+              $this.text(commaSeparateNumber(Math.floor(this.countNum)));
+            },
+            complete: function () {
+              $this.text(commaSeparateNumber(this.countNum));
+              //alert('finished');
+            },
           }
-        };
-        updateCount();
+        );
       });
+
+      function commaSeparateNumber(val) {
+        while (/(\d+)(\d{3})/.test(val.toString())) {
+          val = val.toString().replace(/(\d+)(\d{3})/, "$1" + "," + "$2");
+        }
+        return val;
+      }
     }
     started = true;
   }
