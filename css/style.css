@@ -52,12 +52,6 @@ header .header_content {
 
 /************* home style ******************/
 
-.home {
-  background: url("../img/Banner.jpg");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-}
 /************sponsors style *************/
 .sponsors {
   background: var(--main-color);
@@ -122,7 +116,7 @@ header .header_content {
 .icon_counter .icon_item .icon_text span {
   color: var(--second-color);
   font-weight: bolder;
-  margin: 0 8px;
+  margin: 0 7px;
 }
 /***************footer style *********************/
 .footer {
@@ -152,12 +146,6 @@ header .header_content {
 }
 
 /*********** responsive style *******************/
-@media (max-width: 1200px) and (min-width: 577px) {
-  .home {
-    height: auto;
-    padding: 200px;
-  }
-}
 @media (max-width: 1026px) and (min-width: 767px) {
   .icon_counter .icon_item {
     padding: 4px;
@@ -214,13 +202,7 @@ header .header_content {
     flex-direction: column;
     padding: 11px;
   }
-  .home {
-    height: auto;
-    padding: 132px 10px;
-    background-image: url("../img/Bunner-2.jpg");
-    background-position: center;
-    background-size: cover;
-  }
+
   .manager_text {
     margin: auto;
   }
@@ -240,10 +222,7 @@ header .header_content {
     flex-direction: column;
   }
 }
-@media (max-width: 410px) {
-  .home {
-    background-position: center right -31px;
-  }
+@media (max-width: 367px) {
   .header a {
     font-size: 11px;
   }
