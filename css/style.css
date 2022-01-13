@@ -51,6 +51,9 @@ header .header_content {
 }
 
 /************* home style ******************/
+.hero {
+    overflow-x: hidden;
+}
 
 /************sponsors style *************/
 .sponsors {
